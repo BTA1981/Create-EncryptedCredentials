@@ -1,6 +1,6 @@
 # Script for generating a private key with encrypted key and password
 
-$KeyFilePath = "C:\beheer\key\ClientExchangeOnline.key"
+$KeyFilePath = "C:\beheer\key\Online.key"
 $PasswordFilePath = "c:\Beheer\key\Password.txt"
 $CustomPWD = "15645466"
 $Username = "<domain>\<username>"
@@ -61,8 +61,8 @@ Create-EncryptedPScredentialObject -Username $Username -PasswordFilePath $Passwo
 #################################################################################################################################################################################
 # Test these credentials with the following code (logs into Exchange Online)
 <#
-$CredPath = "c:\beheer\key\saMSPstackCreds.xml"
-$KeyFilePath = "C:\beheer\key\ClientExchangeOnline.key"
+$CredPath = "c:\beheer\key\Creds.xml"
+$KeyFilePath = "C:\beheer\key\Online.key"
 $Key = Get-Content $KeyFilePath
 $credXML = Import-Clixml $CredPath
 $secureStringPWD = ConvertTo-SecureString -String $credXML.Password -Key $key
